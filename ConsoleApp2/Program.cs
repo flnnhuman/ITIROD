@@ -24,6 +24,7 @@ namespace ConsoleApp2
 		private static readonly byte[] heartbeat = {0xAB, 0x32, 0xD7};
 		private static readonly byte[] history_request = {0x54, 0xE3, 0x42};
 		private static List<Message> history = new List<Message>();
+		private static List<Message> unsent = new List<Message>();
 
 		static async Task Main()
 		{
@@ -73,7 +74,10 @@ namespace ConsoleApp2
 					string input = Console.ReadLine();
 					if (isDisconnected)
 					{
-						Console.WriteLine("Your message is not delivered");
+						Console.WriteLine("Your message is not delivered, it will be delivered on reconect");
+						var unsentMessage = new Message
+							{message = input, sender = myId, receiver = notMyId, timestamp = DateTime.UtcNow.Ticks};
+						unsent.Add(unsentMessage);
 						continue;
 					}
 
@@ -114,6 +118,13 @@ namespace ConsoleApp2
 							package.RemoveRange(0, 3);
 
 							notMyId = Encoding.Unicode.GetString(package.ToArray());
+							foreach (var msg in unsent.Where(x=> x.receiver== notMyId).OrderBy(x =>x.timestamp ))
+							{
+								var newpackage = Encoding.Unicode.GetBytes(msg.message);
+								await sender.SendAsync(newpackage, newpackage.Length, config.RemoveHost, config.RemotePort);
+							}
+
+							unsent.RemoveAll(x => x.receiver == notMyId);
 						}
 
 						isDisconnected = false;
