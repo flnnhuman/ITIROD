@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Create playlist</title>
+    <link rel="stylesheet" type="text/css" href="assets/main.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/home.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/header.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/footer.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/logo.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/create.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/playlist.css"/>
+</head>
+<body>
+<header>
+    <div class="">
+        <div class="header">
+            <div class="header__left">
+                <span>
+                <a href="/" class="header__logo_image"></a>
+            </span>
+                <nav class="nav">
+                    <a href="playlist.html">
+                        <div class="nav__tab">Playlists</div>
+                    </a>
+                </nav>
+            </div>
+            <nav class="header__right">
+                <a href="login.html">
+                    <div class="nav__tab">Login</div>
+                </a>
+            </nav>
+        </div>
+
+    </div>
+
+</header>
+<main class="context">
+    <section class="create_block">
+        <div class="create_block__info">
+            <h1>Playlist creation</h1>
+            <div class="img_drop" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div class="create_block__name">
+                <label for="name">Playlist name</label>
+                <input id="name" placeholder="name">
+            </div>
+
+        </div>
+
+        <button> UPLOAD</button>
+        <ul class="create_block__playlist">
+            <li class="track">
+                <a class="remove">Delete</a>
+                <div class="track__logo">
+                    <img src="assets/album.png" alt="album">
+                </div>
+                <div class="track__desc">
+                    <div class="track__name">
+                        <a>Name</a>
+                    </div>
+                    <div class="track__author">
+                        <a>Description</a>
+                    </div>
+
+                </div>
+                <time class="track__time">
+                    <span>3:13</span>
+                </time>
+            </li>
+            <li class="track">
+                <a class="remove">Delete</a>
+                <div class="track__logo">
+                    <img src="assets/album.png" alt="album">
+                </div>
+                <div class="track__desc">
+                    <div class="track__name">
+                        <a>Name</a>
+                    </div>
+                    <div class="track__author">
+                        <a>Description</a>
+                    </div>
+
+                </div>
+                <time class="track__time">
+                    <span>3:13</span>
+                </time>
+            </li>
+        </ul>
+
+
+    </section>
+</main>
+<footer>
+    <nav class="footer__block">
+        <h2>Navigation</h2>
+        <ul>
+            <li><a>Create playlist</a></li>
+
+        </ul>
+    </nav>
+
+    <div class="footer__block">
+        <h2>Почта:</h2>
+        <p><a href="mailto:gmail.com">peseckiy.vlad@gmail.com</a>
+    </div>
+</footer>
+</body>
+</html>

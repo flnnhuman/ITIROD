@@ -1,0 +1,141 @@
+body {
+    margin: 0;
+}
+
+
+.albums__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.albums {
+    width: 100%;
+}
+.album {
+    position: relative;
+    width: 200px;
+    height: auto;
+    padding: 15px;
+    margin: 5px;
+    display: block;
+    vertical-align: top;
+    flex-direction: column;
+}
+
+.album:hover {
+    /*border: 3px solid #ECC285;*/
+    box-shadow: inset 0 0 0 3px #ECC285;
+}
+
+.album:hover figure img {
+    opacity: 0.5;
+}
+
+.album__mask {
+    opacity: 0;
+    /*background-color: rgba(0, 0, 0, 0.3);*/
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.album:hover .album__mask {
+    opacity: 1;
+}
+
+.album__mask a {
+    color: #ECC285;
+}
+
+.album__desc {
+}
+
+.album__logo {
+    position: relative;
+}
+
+.album__logo img {
+    width: 100%;
+}
+
+.title h3 {
+    color: gray;
+    margin-top: -15px;
+}
+
+.album__author {
+}
+
+
+.albums__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+@media (min-width: 765px) {
+    .albums__list {
+        flex-wrap: nowrap;
+        justify-content: normal;
+    }
+}
+
+figcaption h2 {
+    margin: 0;
+}
+
+.album__author h3 {
+    margin: 0;
+    color: gray;
+}
+
+.genres__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+.genres {
+    width: 100%;
+}
+
+
+@media (min-width: 1440px) {
+    .genres {
+        width: 30%;
+    }
+}
+
+
+.genres__list {
+    list-style: none;
+    width: 100%;
+}
+.genres__item:hover img {
+    height: 200px;
+}
+.genres__item img {
+    height: 100px;
+    transition: height 2s;
+}
+.genres__item {
+    width: 100%;
+    margin: 10px 0;
+    background-color: aliceblue;
+}
+.genres__item span {
+    margin-left: 20px;
+}
+.genres__link{
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+

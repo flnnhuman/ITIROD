@@ -1,0 +1,110 @@
+.create_block {
+    background: #202020;
+    width: 100%;
+    padding: 10px;
+}
+
+.create_block h1 {
+    margin-left: 10px;
+    width: 100%;
+}
+
+.img_drop {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+}
+
+.create_block__info {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.create_block__name {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.create_block__name p {
+    font-size: 1.2em;
+}
+
+.create_block__name input {
+    font-size: 18px;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 3px solid #505050;
+    border-radius: 15px;
+}
+
+
+.create_block__name input:focus {
+    font-size: 18px;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 3px solid #ECC285;
+    border-radius: 15px;
+    outline: none;
+}
+
+.create_block__playlist .track:hover {
+    box-shadow: inset 0 0 0 2px #b84646;
+}
+
+.track {
+    position: relative;
+}
+
+.remove {
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.track:hover .remove {
+    opacity: 1;
+}
+
+a.remove {
+    color: #ECC285;
+}
+
+button {
+    color: white;
+    margin: 15px;
+    padding: 15px;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+    border-radius: 5px;
+    border: 4px solid #ECC285;
+    background: linear-gradient(to right, #ECC285, #ECC285) no-repeat;
+    background-size: 0 100%;
+}
+button:hover {
+    background-size: 100% 100%;
+    color: #808080;
+}
+
+
+/*.track .remove{*/
+/*    display: none;*/
+/*    top: 50%;*/
+/*    left: 50%;*/
+/*}*/
+/*.track:hover .remove{*/
+/*    display: block;*/
+/*    position: absolute;*/
+/*    transform: translate(-50%, -50%);*/
+/*}*/
