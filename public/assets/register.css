@@ -55,22 +55,6 @@ form input:focus {
     outline: none;
 }
 
-form button {
-    color: black;
-    margin: 15px;
-    padding: 15px;
-    -webkit-transition: all .5s;
-    transition: all .5s;
-    border-radius: 5px;
-    border: 4px solid #ECC285;
-    background: linear-gradient(to right, #ECC285, #ECC285) no-repeat;
-    background-size: 0 100%;
-}
-form button:hover {
-    background-size: 100% 100%;
-    color: #808080;
-}
-
 .register__footer {
     height: 50px;
     background: gray;

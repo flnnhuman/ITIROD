@@ -28,46 +28,39 @@
 </head>
 <body>
 <header>
-    <div class="">
-        <div class="header">
-            <div class="header__left">
-                <span>
+    <div class="header__left">
+        <span>
                 <a href="/" class="header__logo_image"></a>
-            </span>
-                <nav class="nav">
-                    <a href="playlist.html">
-                        <div class="nav__tab">Playlists</div>
-                    </a>
-                </nav>
-            </div>
-            <nav class="header__right">
-                <a href="login.html">
-                    <div class="nav__tab">Login</div>
-                </a>
-            </nav>
-        </div>
-
+        </span>
+        <nav>
+            <a href="playlist.html">
+                <div class="hover-btn">Playlists</div>
+            </a>
+        </nav>
     </div>
-
+    <nav class="header__right">
+        <a href="login.html">
+            <div class="hover-btn">Login</div>
+        </a>
+    </nav>
 </header>
 <main class="context">
     <h1>Main</h1>
     <section class="albums">
         <div class="title">
             <h2>Recent users playlist</h2>
-            <h3>New tracks, albums, collections</h3>
+            <p>New tracks, albums, collections</p>
         </div>
-        <ul class="albums__list">
+        <ol class="albums__list">
             <li class="album">
                 <div class="album__logo">
-
                     <figure>
                         <img src="assets/album.png" alt="album">
                         <figcaption class="album__desc"><h2>Name</h2></figcaption>
                     </figure>
                     <div class="album__mask">
                         <div class="album__play-link">
-                            <a>Play</a>
+                            <button class="btn">Play</button>
                         </div>
                     </div>
                 </div>
@@ -77,14 +70,13 @@
             </li>
             <li class="album">
                 <div class="album__logo">
-
                     <figure>
                         <img src="assets/album.png" alt="album">
                         <figcaption class="album__desc"><h2>Name</h2></figcaption>
                     </figure>
                     <div class="album__mask">
                         <div class="album__play-link">
-                            <a>Play</a>
+                            <button class="btn">Play</button>
                         </div>
                     </div>
                 </div>
@@ -94,14 +86,13 @@
             </li>
             <li class="album">
                 <div class="album__logo">
-
                     <figure>
                         <img src="assets/album.png" alt="album">
                         <figcaption class="album__desc"><h2>Name</h2></figcaption>
                     </figure>
                     <div class="album__mask">
                         <div class="album__play-link">
-                            <a>Play</a>
+                            <button class="btn">Play</button>
                         </div>
                     </div>
                 </div>
@@ -109,20 +100,20 @@
                     <h3>Author</h3>
                 </div>
             </li>
-        </ul>
+        </ol>
     </section>
 
     <section class="playlists">
         <div class="title">
             <h2>Recent tracks</h2>
-            <h3>Last tracks uploaded by users</h3>
+            <p>Last tracks uploaded by users</p>
         </div>
-        <ul class="playlist__list">
+        <ol class="playlist__list">
             <li class="track">
                 <div class="track__logo">
                     <div class="track__mask">
                         <div class="track__play-link">
-                            <a class="play">Play</a>
+                            <button class="play btn">Play</button>
                         </div>
                     </div>
                     <img src="assets/album.png" alt="album">
@@ -144,7 +135,7 @@
                 <div class="track__logo">
                     <div class="track__mask">
                         <div class="track__play-link">
-                            <a class="play">Play</a>
+                            <button class="play btn">Play</button>
                         </div>
                     </div>
                     <img src="assets/album.png" alt="album">
@@ -166,7 +157,7 @@
                 <div class="track__logo">
                     <div class="track__mask">
                         <div class="track__play-link">
-                            <a class="play">Play</a>
+                            <button class="play btn">Play</button>
                         </div>
                     </div>
                     <img src="assets/album.png" alt="album">
@@ -188,7 +179,7 @@
                 <div class="track__logo">
                     <div class="track__mask">
                         <div class="track__play-link">
-                            <a class="play">Play</a>
+                            <button class="play btn">Play</button>
                         </div>
                     </div>
                     <img src="assets/album.png" alt="album">
@@ -210,7 +201,7 @@
                 <div class="track__logo">
                     <div class="track__mask">
                         <div class="track__play-link">
-                            <a class="play">Play</a>
+                            <button class="play btn">Play</button>
                         </div>
                     </div>
                     <img src="assets/album.png" alt="album">
@@ -232,7 +223,7 @@
                 <div class="track__logo">
                     <div class="track__mask">
                         <div class="track__play-link">
-                            <a class="play">Play</a>
+                            <button class="play btn">Play</button>
                         </div>
                     </div>
                     <img src="assets/album.png" alt="album">
@@ -250,7 +241,9 @@
                     <span>3:13</span>
                 </time>
             </li>
-        </ul>
+
+
+        </ol>
     </section>
 
     <aside class="genres">

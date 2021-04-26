@@ -12,5 +12,5 @@ footer h2 {
 }
 
 footer .footer__block{
-vertical-align: center;
+flex-direction: column;
 }

@@ -54,8 +54,6 @@ body {
     color: #ECC285;
 }
 
-.album__desc {
-}
 
 .album__logo {
     position: relative;
@@ -65,7 +63,7 @@ body {
     width: 100%;
 }
 
-.title h3 {
+.title p {
     color: gray;
     margin-top: -15px;
 }
