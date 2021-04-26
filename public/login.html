@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="assets/login.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/logo.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/main.css"/>
+</head>
+<body class="background">
+
+<div class="modal">
+    <form action="login.html" method="post">
+        <div class="header__logo_image">
+        </div>
+
+        <div class="login__container">
+            <label for="username"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" id="username" required>
+
+            <label for="password"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" id="password" required>
+
+            <button type="submit" class="hover-btn" style="color: black">Login</button>
+            <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+            <p style="color: black">
+                Don't have an account yet? <a href="register.html">Sign up</a>
+            </p>
+        </div>
+
+        <div class="login__footer"></div>
+    </form>
+</div>
+</body>
+</html>
