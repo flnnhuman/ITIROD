@@ -33,12 +33,12 @@
     padding: 15px;
 }
 
-label {
+.register__container label {
     color: #181818;
     padding: 10px 10px 5px;
 }
 
-form input {
+.register__container input {
     font-size: 18px;
     padding: 5px;
     margin-bottom: 10px;
@@ -46,7 +46,7 @@ form input {
     border-radius: 15px;
 }
 
-form input:focus {
+.register__container input:focus {
     font-size: 18px;
     padding: 5px;
     margin-bottom: 10px;

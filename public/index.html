@@ -4,296 +4,44 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Music</title>
-    <!-- <script defer src="/__/firebase/8.2.10/firebase-app.js"></script>
-     <script defer src="/__/firebase/8.2.10/firebase-auth.js"></script>
-     <script defer src="/__/firebase/8.2.10/firebase-database.js"></script>
-     <script defer src="/__/firebase/8.2.10/firebase-firestore.js"></script>
-     <script defer src="/__/firebase/8.2.10/firebase-functions.js"></script>
-     <script defer src="/__/firebase/8.2.10/firebase-messaging.js"></script>
-     <script defer src="/__/firebase/8.2.10/firebase-storage.js"></script>
-     <script defer src="/__/firebase/8.2.10/firebase-analytics.js"></script>
-     <script defer src="/__/firebase/8.2.10/firebase-remote-config.js"></script>
-     <script defer src="/__/firebase/8.2.10/firebase-performance.js"></script>-->
-    <!-- 
+    <script defer src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.4.2/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.4.2/firebase-database.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.4.2/firebase-firestore.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.4.2/firebase-functions.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.4.2/firebase-messaging.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.4.2/firebase-storage.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.4.2/firebase-analytics.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.4.2/firebase-remote-config.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.4.2/firebase-performance.js"></script>
+    <!--
       initialize the SDK after all desired features are loaded, set useEmulator to false
       to avoid connecting the SDK to running emulators.
     -->
-    <!--<script defer src="/__/firebase/init.js?useEmulator=true"></script>-->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
     <link rel="stylesheet" type="text/css" href="assets/main.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/create.css"/>
     <link rel="stylesheet" type="text/css" href="assets/home.css"/>
     <link rel="stylesheet" type="text/css" href="assets/header.css"/>
     <link rel="stylesheet" type="text/css" href="assets/footer.css"/>
     <link rel="stylesheet" type="text/css" href="assets/playlist.css"/>
     <link rel="stylesheet" type="text/css" href="assets/logo.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/login.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/register.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/player.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/author.css"/>
+    <script type="module" src="app.js"></script>
 </head>
 <body>
-<header>
-    <div class="header__left">
-        <span>
-                <a href="/" class="header__logo_image"></a>
-        </span>
-        <nav>
-            <a href="playlist.html">
-                <div class="hover-btn">Playlists</div>
-            </a>
-        </nav>
-    </div>
-    <nav class="header__right">
-        <a href="login.html">
-            <div class="hover-btn">Login</div>
-        </a>
-    </nav>
-</header>
-<main class="context">
-    <h1>Main</h1>
-    <section class="albums">
-        <div class="title">
-            <h2>Recent users playlist</h2>
-            <p>New tracks, albums, collections</p>
-        </div>
-        <ol class="albums__list">
-            <li class="album">
-                <div class="album__logo">
-                    <figure>
-                        <img src="assets/album.png" alt="album">
-                        <figcaption class="album__desc"><h2>Name</h2></figcaption>
-                    </figure>
-                    <div class="album__mask">
-                        <div class="album__play-link">
-                            <button class="btn">Play</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="album__author">
-                    <h3>Author</h3>
-                </div>
-            </li>
-            <li class="album">
-                <div class="album__logo">
-                    <figure>
-                        <img src="assets/album.png" alt="album">
-                        <figcaption class="album__desc"><h2>Name</h2></figcaption>
-                    </figure>
-                    <div class="album__mask">
-                        <div class="album__play-link">
-                            <button class="btn">Play</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="album__author">
-                    <h3>Author</h3>
-                </div>
-            </li>
-            <li class="album">
-                <div class="album__logo">
-                    <figure>
-                        <img src="assets/album.png" alt="album">
-                        <figcaption class="album__desc"><h2>Name</h2></figcaption>
-                    </figure>
-                    <div class="album__mask">
-                        <div class="album__play-link">
-                            <button class="btn">Play</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="album__author">
-                    <h3>Author</h3>
-                </div>
-            </li>
-        </ol>
-    </section>
 
-    <section class="playlists">
-        <div class="title">
-            <h2>Recent tracks</h2>
-            <p>Last tracks uploaded by users</p>
-        </div>
-        <ol class="playlist__list">
-            <li class="track">
-                <div class="track__logo">
-                    <div class="track__mask">
-                        <div class="track__play-link">
-                            <button class="play btn">Play</button>
-                        </div>
-                    </div>
-                    <img src="assets/album.png" alt="album">
-                </div>
-                <div class="track__desc">
-                    <div class="track__name">
-                        <a>Name</a>
-                    </div>
-                    <div class="track__author">
-                        <a>Description</a>
-                    </div>
-
-                </div>
-                <time class="track__time">
-                    <span>3:13</span>
-                </time>
-            </li>
-            <li class="track">
-                <div class="track__logo">
-                    <div class="track__mask">
-                        <div class="track__play-link">
-                            <button class="play btn">Play</button>
-                        </div>
-                    </div>
-                    <img src="assets/album.png" alt="album">
-                </div>
-                <div class="track__desc">
-                    <div class="track__name">
-                        <a>Name</a>
-                    </div>
-                    <div class="track__author">
-                        <a>Description</a>
-                    </div>
-
-                </div>
-                <time class="track__time">
-                    <span>3:13</span>
-                </time>
-            </li>
-            <li class="track">
-                <div class="track__logo">
-                    <div class="track__mask">
-                        <div class="track__play-link">
-                            <button class="play btn">Play</button>
-                        </div>
-                    </div>
-                    <img src="assets/album.png" alt="album">
-                </div>
-                <div class="track__desc">
-                    <div class="track__name">
-                        <a>Name</a>
-                    </div>
-                    <div class="track__author">
-                        <a>Description</a>
-                    </div>
-
-                </div>
-                <time class="track__time">
-                    <span>3:13</span>
-                </time>
-            </li>
-            <li class="track">
-                <div class="track__logo">
-                    <div class="track__mask">
-                        <div class="track__play-link">
-                            <button class="play btn">Play</button>
-                        </div>
-                    </div>
-                    <img src="assets/album.png" alt="album">
-                </div>
-                <div class="track__desc">
-                    <div class="track__name">
-                        <a>Name</a>
-                    </div>
-                    <div class="track__author">
-                        <a>Description</a>
-                    </div>
-
-                </div>
-                <time class="track__time">
-                    <span>3:13</span>
-                </time>
-            </li>
-            <li class="track">
-                <div class="track__logo">
-                    <div class="track__mask">
-                        <div class="track__play-link">
-                            <button class="play btn">Play</button>
-                        </div>
-                    </div>
-                    <img src="assets/album.png" alt="album">
-                </div>
-                <div class="track__desc">
-                    <div class="track__name">
-                        <a>Name</a>
-                    </div>
-                    <div class="track__author">
-                        <a>Description</a>
-                    </div>
-
-                </div>
-                <time class="track__time">
-                    <span>3:13</span>
-                </time>
-            </li>
-            <li class="track">
-                <div class="track__logo">
-                    <div class="track__mask">
-                        <div class="track__play-link">
-                            <button class="play btn">Play</button>
-                        </div>
-                    </div>
-                    <img src="assets/album.png" alt="album">
-                </div>
-                <div class="track__desc">
-                    <div class="track__name">
-                        <a>Name</a>
-                    </div>
-                    <div class="track__author">
-                        <a>Description</a>
-                    </div>
-
-                </div>
-                <time class="track__time">
-                    <span>3:13</span>
-                </time>
-            </li>
+<div id="header_container"></div>
+<div id="page_container" class="container pageEntry">
+    <article> Loading....</article>
+</div>
+<div id="player_container" class="player"></div>
+<div id="footer_container"></div>
 
 
-        </ol>
-    </section>
-
-    <aside class="genres">
-
-        <ul class="genres__list">
-            <li class="genres__item">
-                <a class="genres__link" href="/">
-
-                    <h2>Rock</h2>
-
-                    <picture>
-                        <img src="assets/genre.png" alt="genre">
-                    </picture>
-                </a>
-            </li>
-            <li class="genres__item">
-                <a class="genres__link" href="/">
-                    <h2>Rock</h2>
-                    <picture>
-                        <img src="assets/genre.png" alt="genre">
-                    </picture>
-                </a>
-            </li>
-            <li class="genres__item">
-                <a class="genres__link" href="/">
-                    <h2>Rock</h2>
-                    <picture>
-                        <img src="assets/genre.png" alt="genre">
-                    </picture>
-                </a>
-            </li>
-
-        </ul>
-    </aside>
-
-
-</main>
-<footer>
-    <nav class="footer__block">
-        <h2>Navigation</h2>
-        <ul>
-            <li><a>Create playlist</a></li>
-
-        </ul>
-    </nav>
-    <div class="footer__block">
-        <h2>Email:</h2>
-        <p><a href="mailto:gmail.com">peseckiy.vlad@gmail.com</a>
-    </div>
-</footer>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const loadEl = document.querySelector('#load');
@@ -325,13 +73,12 @@
                 'remoteConfig',
                 'performance',
             ].filter(feature => typeof app[feature] === 'function');
-            loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
+            console.log(`Firebase SDK loaded with ${features.join(', ')}`);
         } catch (e) {
             console.error(e);
-            loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+            console.log('Error loading the Firebase SDK, check the console.');
         }
     });
 </script>
 </body>
-
 </html>

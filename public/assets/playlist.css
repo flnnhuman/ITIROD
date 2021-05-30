@@ -57,10 +57,6 @@ body {
     color: gray;
 }
 
-.track__time span {
-    margin: 10px;
-}
-
 @media (min-width: 1440px) {
     .playlists {
         width: 70%;
@@ -80,6 +76,10 @@ body {
     display: flex;
     justify-content: center;
 }
+.playlist_block__logo img{
+    height: 200px;
+    width: 200px;
+}
 
 .playlist_block__buttons{
     display: flex;
@@ -87,3 +87,4 @@ body {
 .btn_play{
     border-radius: 30px; border-color: #ECC285; background-color: #ECC285; padding: 10px
 }
+

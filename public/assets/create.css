@@ -9,7 +9,7 @@
     width: 100%;
 }
 
-.img_drop {
+.create_block__info div .img_box {
     width: 200px;
     height: 200px;
     margin: 10px;
@@ -32,7 +32,7 @@
     font-size: 1.2em;
 }
 
-.create_block__name input {
+.create_block__name input, .search input  {
     font-size: 18px;
     padding: 5px;
     margin-bottom: 10px;
@@ -41,7 +41,7 @@
 }
 
 
-.create_block__name input:focus {
+.create_block__name input:focus, .search input:focus {
     font-size: 18px;
     padding: 5px;
     margin-bottom: 10px;
@@ -80,3 +80,13 @@
 a.remove {
     color: #ECC285;
 }
+
+.img_preview {
+    height: 100%;
+    width: 100%;
+}
+
+.img_preview[src=""] {
+    display: none;
+}
+

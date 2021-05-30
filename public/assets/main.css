@@ -9,6 +9,10 @@ html {
     flex-wrap: wrap;
 }
 
+.hidden{
+    display: none;
+}
+
 @media (min-width: 375px) {
     .playlists {
         width: 70%;
@@ -41,6 +45,7 @@ ul{
 
 a:visited, a:link, a:hover, a:active {
     text-decoration: none;
+    color: white;
 }
 
 button.btn{
@@ -67,4 +72,8 @@ button.btn{
 .hover-btn:hover {
     background-size: 100% 100%;
     color: black;
+}
+
+.succeed{
+    border-color: forestgreen;
 }
