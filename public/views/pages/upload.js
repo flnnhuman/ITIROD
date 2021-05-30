@@ -19,6 +19,8 @@ let Upload = {
                         <div class="create_block__name">
                             <label for="name">Track name</label>
                             <input id="name" placeholder="name">
+                            <p>Genre</p>
+                            <select id="genre_select"></select>
                             <p id="author_name"></p>
                         </div>
                     </div>
@@ -43,8 +45,9 @@ let Upload = {
         const trackUpload = document.getElementById("trackUpload");
         const authorNameLabel = document.getElementById("author_name");
         const img = document.getElementById("img");
+        const genreSelect = document.getElementById("genre_select");
         let trackUrl;
-
+        await loadGenres();
         function uuidv4() {
             return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
                 var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
@@ -52,19 +55,30 @@ let Upload = {
             });
         }
 
+
+        async function loadGenres() {
+            await dbStuff.getGenres().then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    let opt = document.createElement('option');
+                    let genre = doc.data();
+                    opt.value = doc.id;
+                    opt.innerHTML = genre.name;
+                    genreSelect.appendChild(opt);
+                });
+            });
+        }
         trackUpload.addEventListener('change', async (event) => {
             trackUrl = uuidv4() + '.mp3';
 
             let res = await firebase.storage().ref(trackUrl).put(event.target.files[0]);
             document.getElementById("img_box").classList.add("succeed");
         });
-
         saveButton.addEventListener("click", async function (e) {
             const data = {
                 name: nameInput.value,
                 author: author,
                 path: trackUrl,
-                genre: firebase.firestore().collection("genres").doc("rock")
+                genre: firebase.firestore().collection("genres").doc(genreSelect.value)
             };
 
             const res = await firebase.firestore().collection('tracks').add(data);
@@ -109,6 +123,7 @@ let Upload = {
 
             }
         });
+
     }
 }
 export default Upload;
