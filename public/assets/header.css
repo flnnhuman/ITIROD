@@ -52,7 +52,7 @@
     }
 
     header a {
-        float: left;
+        width: 40%;
         display: block;
         color: #f2f2f2;
         text-align: center;
@@ -62,5 +62,8 @@
     header a:hover {
         background-color: #ddd;
         color: black;
+    }
+    .header__left nav{
+        display: flex;
     }
 }
