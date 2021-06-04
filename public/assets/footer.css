@@ -1,0 +1,16 @@
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    background-color: #ECC285;
+    padding: 20px;
+}
+
+footer h2 {
+    text-align: center;
+}
+
+footer .footer__block{
+flex-direction: column;
+}
