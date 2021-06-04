@@ -5,6 +5,12 @@ let Home = {
         let view =  /*html*/`
         <div class="context">
             <h1>Main</h1>
+            <section class="search">
+             <h2>Search</h2>
+                <form id="searchform" class="searchform">
+                    <input placeholder="search" id="searchquery">
+                </form>
+            </section>
             <section class="albums">
                 <div class="title">
                     <h2>Recent users playlist</h2>
@@ -35,10 +41,16 @@ let Home = {
         await loadTracks();
         await loadPlaylists();
 
+        let searhForm = document.getElementById("searchform");
+        let searhquery= document.getElementById("searchquery");
+        searhForm.onsubmit = ()=>{
+            window.location.href = '/#/search/'+ searhquery.value;
+        }
+
 
         tracksList.addEventListener("click", async function (e) {
             if (e.target && e.target.nodeName == "BUTTON") {
-                dbStuff.setCurrentTracks(firebase.auth().currentUser.uid, [e.target.id]);
+                await dbStuff.setCurrentTracks([e.target.id]);
             }
         });
     }
@@ -140,17 +152,17 @@ async function loadPlaylists() {
 
             let data = (await firebase.firestore().collection("playlists").doc(e.target.id).get()).data();
             let tracks = [];
-            let promice = new Promise((resolve, reject)=> {
+            let promice = new Promise((resolve, reject) => {
                 data.tracks.forEach(async (trackDoc, index, array) => {
                         let track = (await trackDoc.get()).data();
                         tracks.push(track.path);
-                        if (index === array.length -1) resolve();
+                        if (index === array.length - 1) resolve();
                     }
                 );
             });
 
-            promice.then(async ()=>{
-                await dbStuff.setCurrentTracks(firebase.auth().currentUser.uid, tracks);
+            promice.then(async () => {
+                await dbStuff.setCurrentTracks(tracks);
             });
 
 

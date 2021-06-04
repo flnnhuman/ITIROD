@@ -5,7 +5,7 @@ let Login = {
             `    
             <div class="background">
                 <div class="modal">
-                    <<form action=""></form>>
+                    <form action=""></form>
                         <div class="header__logo_image">
                         </div>
                 
@@ -21,7 +21,7 @@ let Login = {
                                 <input type="checkbox" checked="checked" name="remember"> Remember me
                             </label>
                             <p style="color: black">
-                                Don't have an account yet? <a href="/#/register">Sign up</a>
+                                Don't have an account yet? <a href="/#/register" style="color: deeppink">Sign up</a>
                             </p>
                         </div>
                 
@@ -36,6 +36,7 @@ let Login = {
     , after_render: async () => {
         const confirm_login = document.getElementById("confirm-login");
 
+        document.getElementById("player_container").innerHTML = "";
         confirm_login.addEventListener ("click",  () => {
             event.preventDefault();
             const username = document.getElementById("username");

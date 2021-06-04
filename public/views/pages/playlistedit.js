@@ -66,7 +66,7 @@ let Edit = {
 
         function uuidv4() {
             return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-                var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+                let r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
                 return v.toString(16);
             });
         }
@@ -76,18 +76,19 @@ let Edit = {
             imgUrl = 'img/' + uuidv4() + '.jpg';
 
             let res = await firebase.storage().ref(imgUrl).put(event.target.files[0]);
-            img.src = await firebase.storage().ref(imgUrl).getDownloadURL();
+            img.src= imgUrl = await firebase.storage().ref(imgUrl).getDownloadURL();
+
         });
         saveButton.addEventListener("click", async function (e) {
             const data = {
                 name: nameInput.value,
-                imgUrl: await firebase.storage().ref(imgUrl).getDownloadURL(),
+                imgUrl: imgUrl,
                 tracks: tracks.map(function (value) {
                     return firebase.firestore().collection('tracks').doc(value.id);
                 }),
             };
 
-            const res = playlist.update(data);
+            const res = await playlist.update(data);
             window.location.href = '/';
         });
         search.addEventListener('keyup', async function (e) {

@@ -19,6 +19,9 @@ let Playlist = {
                             <button id="btn_play" class="btn_play">
                                 Listen
                             </button>
+                            <button id="btn_duplicate" class="btn_play">
+                                Duplicate
+                            </button>
                             <a id="btn_edit" class="btn_play hidden" style="color: black">
                                 Edit
                             </a>
@@ -45,13 +48,14 @@ let Playlist = {
         let playlist_desc = document.getElementById("playlist_desc");
 
         let btn_play = document.getElementById("btn_play");
+        let btn_duplicate = document.getElementById("btn_duplicate");
 
 
 
         let tracksList = document.getElementById('playlist_list');
         tracksList.addEventListener("click", async function (e) {
             if (e.target && e.target.nodeName == "BUTTON") {
-                dbStuff.setCurrentTracks(firebase.auth().currentUser.uid, [e.target.id]);
+                await dbStuff.setCurrentTracks([e.target.id]);
             }
         });
 
@@ -69,15 +73,27 @@ let Playlist = {
         await loadTracks();
 
         firebase.auth().onAuthStateChanged(firebaseUser => {
-            if (firebaseUser && data.createdByUser == firebaseUser.uid) {
+            if (firebaseUser) {
                 let btn = document.getElementById("btn_edit");
                 btn.classList.remove('hidden');
                 btn.href = "/#/playlistedit/" + id
             }
         });
 
+        btn_duplicate.addEventListener("click", async function (e) {
+            const request = {
+                description: 'playlist created by ' + firebase.auth().currentUser.email,
+                name: data.name,
+                imgUrl: data.imgUrl,
+                tracks: data.tracks,
+            };
+
+            const res = await firebase.firestore().collection('playlists').add(request);
+            window.location.href = '/';
+        });
+
         btn_play.addEventListener("click", async function(e){
-            dbStuff.setCurrentTracks(firebase.auth().currentUser.uid, tracks);
+            await dbStuff.setCurrentTracks(tracks);
         });
         async function loadTracks() {
             let ul = document.getElementById("playlist_list");

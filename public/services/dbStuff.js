@@ -10,13 +10,19 @@ export async function getAuthors() {
     return firebase.firestore().collection("authors").get();
 }
 
-
 export async function getPlaylists() {
     return firebase.firestore().collection("playlists").get();
 }
 
-export async function setCurrentTracks(user, id) {
-    firebase.database().ref('/current_tracks/' + user).set(id);
+export async function setCurrentTracks(id) {
+    firebase.auth().onAuthStateChanged(function(x) {
+        if (x) {
+            firebase.database().ref('/current_tracks/' + x.uid).set([]);
+            firebase.database().ref('/current_tracks/' + x.uid).set(id);
+        } else {
+            window.location.href = '/#/login';
+        }
+    });
 }
 
 export async function getPlaylistById(id) {

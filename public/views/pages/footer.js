@@ -5,8 +5,8 @@ let Footer = {
                 <nav class="footer__block">
                     <h2>Navigation</h2>
                     <ul>
-                        <li><a>Create playlist</a></li>
-            
+                        <li><a href="/#/create">Create playlist</a></li>
+                        <li><a href="/#/upload">Upload track</a></li>
                     </ul>
                 </nav>
                 <div class="footer__block">

@@ -46,7 +46,7 @@ let Genre = {
         let tracksList = document.getElementById('playlist_list');
         tracksList.addEventListener("click", async function (e) {
             if (e.target && e.target.nodeName == "BUTTON") {
-                dbStuff.setCurrentTracks(firebase.auth().currentUser.uid, [e.target.id]);
+                await dbStuff.setCurrentTracks([e.target.id]);
             }
         });
         let tracks = [];
@@ -64,7 +64,7 @@ let Genre = {
         await loadTracks();
 
         btn_play.addEventListener("click", async function (e) {
-            dbStuff.setCurrentTracks(firebase.auth().currentUser.uid, tracks);
+            await dbStuff.setCurrentTracks(tracks);
         });
 
         async function loadTracks() {

@@ -12,6 +12,7 @@ import PlaylistEdit from "./views/pages/playlistedit.js";
 import Upload from "./views/pages/upload.js";
 import Create from "./views/pages/create.js";
 import Genre from "./views/pages/genre.js";
+import Search from "./views/pages/Search.js";
 import Utils from './services/Utils.js'
 
 const routes = {
@@ -23,6 +24,7 @@ const routes = {
     '/playlist/:id': Playlist,
     '/playlistedit/:id': PlaylistEdit,
     '/genre/:id': Genre,
+    '/search/:id': Search,
 };
 
 

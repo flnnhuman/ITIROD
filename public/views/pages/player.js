@@ -4,9 +4,13 @@ let Player = {
             <div class="player__slider">
                 <input type="range" min="0" max="1000" value="0" id="timer">
             </div>
-             <button class="btn" id="player_prev" style="vertical-align: top;margin-top: 10px;" >←</button>
+            <button  id="player_prev" class="btn-skip" >
+                <img class="prev"  src="assets/right-chevron.png">
+            </button>
             <button class="player__play" id="play_button"></button>
-            <button class="btn"  id="player_next" style="vertical-align: top;margin-top: 10px;" >→</button>
+            <button  id="player_next" class="btn-skip">
+                <img class="next"  src="assets/right-chevron.png">
+            </button>
             <audio id="player">
             </audio>
         `

@@ -77,3 +77,33 @@ button.btn{
 .succeed{
     border-color: forestgreen;
 }
+.search_block {
+    background: #202020;
+    width: 100%;
+    padding: 10px;
+}
+
+.search{
+    width: 100%;
+}
+.searchform{
+    margin-left: 50px;
+}
+
+.btn-skip {
+    cursor: pointer;
+    background: transparent;
+    vertical-align: top;
+    box-shadow: none;
+    border: none;
+}
+.btn-skip img.prev{
+    margin-right: 12px;
+    height: 25px;
+    transform: rotate(180deg);
+    margin-top: 8px
+}
+.btn-skip img.next{
+    height: 25px;
+    margin-top: 8px
+}

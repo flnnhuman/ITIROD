@@ -31,7 +31,7 @@ let register = {
     }
     , after_render: async () => {
         const confirm_register = document.getElementById("confirm-register");
-
+        document.getElementById("player_container").innerHTML = "";
         const email = document.getElementById("email");
         const password = document.getElementById("password");
         const conf_password = document.getElementById("conf_password");
